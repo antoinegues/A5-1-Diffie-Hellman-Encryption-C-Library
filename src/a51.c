@@ -173,5 +173,4 @@ void block_counter_increment(Registers registers) {
 void free_registers(Registers registers) {
     free(registers.lfsrs);
     free(registers.block_counter);
-    free(registers.key);
 }

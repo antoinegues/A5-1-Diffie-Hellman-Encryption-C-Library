@@ -23,7 +23,7 @@ void a51() {
     MU_REPORT();
 
     char *string = calloc(STRING_SIZE, sizeof(char));
-    char *key = input_key();
+    char *key = "1s3CR3t!";
 
     printf("Please enter the message you wish to encrypt/decrypt (LIMIT 255): ");
     fgets(string, STRING_SIZE, stdin);
@@ -43,7 +43,7 @@ void a51() {
 }
 
 int main() {
+    a51();
     diffie_hellman();
-
     return MU_EXIT_CODE;
 }

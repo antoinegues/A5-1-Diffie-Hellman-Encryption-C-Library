@@ -7,6 +7,7 @@
 #include "gmp.h"
 
 void diffie_hellman() {
+    printf("Diffie Hellman");
     mpz_t p, g, o, phi;
     mpz_init(p);
     mpz_init(g);
@@ -54,19 +55,9 @@ void ordre(mpz_t r, mpz_t e, mpz_t n) {
     mpz_set(r, k);
 }
 
-/**
- * def square_and_multiply(a, k, n):
-    n = abs(n)
-    h = 1
-    p = format(k, 'b')
-
-    for i in range(0, len(p)):
-        h = h * h % n
-        if p[i] == "1":
-            h = h * a % n
-
-    return h
- */
-void square_and_multiply() {
-
-}
+//void square_and_multiply(mpz_t h, mpz_t a, mpz_t k, mpz_t n) {
+//    mpz_abs(n, n);
+//    mpz_set_ui(h, 1);
+//
+//    for (int i, )
+//}
