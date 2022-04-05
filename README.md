@@ -2,6 +2,11 @@
 
 C implementation of the A5/1 and Diffie Hellman encryptions algorithms
 
+## Author :
+Victor BRIONNE
+
+Antoine GUESPIN
+
 ## Introduction
 
 ### A5/1
@@ -41,4 +46,4 @@ Finally, run the program :
 ./tp_crypto
 ```
 
-If you to see the details function are available to see the LFSRs
+Display functions are available to see the details of LFSRs

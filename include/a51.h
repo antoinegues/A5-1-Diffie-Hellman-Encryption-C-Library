@@ -1,5 +1,5 @@
 //
-// Created by victor on 30/03/2022.
+// Created by Victor and Antoine on 30/03/2022.
 //
 
 #ifndef TP_CRYPTO_A51_H
