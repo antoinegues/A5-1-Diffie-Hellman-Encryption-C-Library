@@ -67,7 +67,6 @@ void ordre(mpz_t r, mpz_t e, mpz_t n) {
 
     return h
  */
-
 void square_and_multiply() {
 
 }
