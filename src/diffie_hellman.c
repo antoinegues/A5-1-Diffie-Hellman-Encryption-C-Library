@@ -53,3 +53,21 @@ void ordre(mpz_t r, mpz_t e, mpz_t n) {
     }
     mpz_set(r, k);
 }
+
+/**
+ * def square_and_multiply(a, k, n):
+    n = abs(n)
+    h = 1
+    p = format(k, 'b')
+
+    for i in range(0, len(p)):
+        h = h * h % n
+        if p[i] == "1":
+            h = h * a % n
+
+    return h
+ */
+
+void square_and_multiply() {
+
+}
