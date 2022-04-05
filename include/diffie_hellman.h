@@ -7,6 +7,7 @@
 
 #include "stdbool.h"
 
-bool miller_rabin()
+#include "gmp.h"
+
 
 #endif //TP_CRYPTO_DIFFIE_HELMAN_H

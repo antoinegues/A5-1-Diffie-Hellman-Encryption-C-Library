@@ -1,0 +1,11 @@
+prefix=/mnt/c/Users/loulo/OneDrive/Documents/ENSICAEN/1A/crypto_pour_la_mone/TP1_cypto_pour_la_mone/include/gmp
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: GNU MP
+Description: GNU Multiple Precision Arithmetic Library
+URL: https://gmplib.org
+Version: 6.2.1
+Cflags: -I${includedir}
+Libs: -L${libdir} -lgmp

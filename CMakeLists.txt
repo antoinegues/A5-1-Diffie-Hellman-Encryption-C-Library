@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
 project(tp_crypto C)
 
-
-
-include_directories(include src)
+include_directories(include gmp/include)
 
 set(CMAKE_C_STANDARD 23)
 

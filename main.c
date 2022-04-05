@@ -3,18 +3,22 @@
 
 #define STRING_SIZE 256
 
-#include "a51.h"
+#include "minunit.h"
 
-char *input_key() {
-    char *key = calloc(KEY_SIZE, sizeof(unsigned char));
-    printf("Please insert the key : \n");
-    fgets(key, KEY_SIZE, stdin);
-    printf("%s", key);
-    return key;
-}
+#include "test/a51_test.c"
 
+//char *input_key() {
+//    char *key = calloc(KEY_BYTE_SIZE, sizeof(unsigned char));
+//    printf("Please insert the key : \n");
+//    fgets(key, KEY_BYTE_SIZE, stdin);
+//    printf("%s", key);
+//    return key;
+//}
 
 int main() {
+    MU_RUN_SUITE(a51_test_suite);
+    MU_REPORT();
+
     char *string = calloc(STRING_SIZE, sizeof(char));
     char *key = "victor!bg";
     Registers registers = init(key);
@@ -22,8 +26,16 @@ int main() {
     fgets(string, STRING_SIZE, stdin);
     char *cyphered_string = cypher_string(registers, string);
     printf("%s\n", cyphered_string);
-    free(registers);
+
+    registers = init(key);
+    char* decyphered_string = cypher_string(registers, cyphered_string);
+    printf("%s\n", decyphered_string);
+
+    free(registers.lfsrs);
+    free(registers.block_counter);
     free(cyphered_string);
+    free(decyphered_string);
     free(string);
-    return 0;
+
+    return MU_EXIT_CODE;
 }

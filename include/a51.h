@@ -12,19 +12,43 @@
 #define LFSR_3 23
 
 // Registers can be represented as a 64 bits word, or an 8 bytes array
-#define SIZE 8
-#define BIT_SIZE 64
+#define LFSRS_BYTE_SIZE 8
+#define LFSRS_BIT_SIZE 64
 
-#define KEY_SIZE 8
+// Block counter is represented as a 22 bits word, or an 3 bytes array
+#define BLOCK_COUNTER_BYTE_SIZE 3
+#define BLOCK_COUNTER_BIT_SIZE 22
+
+// Key is defined on 64 bits, or an 8 bytes array
+#define KEY_BYTE_SIZE 8
+#define KEY_BIT_SIZE 64
 
 // Each word is 64 bits so it makes 8 bytes
-typedef char *Registers;
+typedef struct {
+    char *key;
+    char *lfsrs;
+    unsigned char *block_counter;
+} Registers;
 
 /**
  * Initializes registers, set them all to 0
  * @return initialized registers
  */
-Registers init(char *);
+Registers init(const char *);
+
+/**
+ * For all the 64 bits of the key, inserts it in each LFSR and updates them
+ * @param registers
+ * @return
+ */
+Registers insert_key(Registers registers);
+
+/**
+ * For all the 22 bits of the block counter, inserts it in each LFSR and updates them
+ * @param registers
+ * @return
+ */
+Registers insert_block_counter(Registers registers);
 
 /**
  * Cypher a byte
@@ -89,5 +113,19 @@ void print_registers(Registers registers);
  * @param value
  */
 void LFSR_insert(Registers registers, int index, int length, unsigned value);
+
+/**
+ * Computes x to the power of n
+ * @param x
+ * @param n
+ * @return
+ */
+int power(int x, int n);
+
+/**
+ * Increment block counter
+ * @param registers
+ */
+void block_counter_increment(Registers registers);
 
 #endif //TP_CRYPTO_A51_H
