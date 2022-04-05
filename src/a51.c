@@ -64,8 +64,8 @@ char *cypher_string(Registers registers, const char *string) {
     }
 
     cypher_string[i] = '\0';
-    print_binary(cypher_string, 0, (int) strlen(string) * 8);
-    printf("\n");
+   // print_binary(cypher_string, 0, (int) strlen(string) * 8);
+    //printf("\n");
 
     return cypher_string;
 }
@@ -167,4 +167,11 @@ void block_counter_increment(Registers registers) {
         }
         registers.block_counter[i]++;
     }
+}
+
+
+void free_registers(Registers registers) {
+    free(registers.lfsrs);
+    free(registers.block_counter);
+    free(registers.key);
 }

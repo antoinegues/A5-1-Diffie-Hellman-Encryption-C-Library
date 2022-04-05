@@ -6,6 +6,7 @@
 #define TP_CRYPTO_A51_H
 
 
+
 // Size of the LFSR
 #define LFSR_1 19
 #define LFSR_2 22
@@ -127,5 +128,11 @@ int power(int x, int n);
  * @param registers
  */
 void block_counter_increment(Registers registers);
+
+/**
+ * Free the registers
+ * @param registers
+ */
+void free_registers(Registers registers);
 
 #endif //TP_CRYPTO_A51_H
